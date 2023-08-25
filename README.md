@@ -18,7 +18,8 @@ The preferred method is to install Electron as a development dependency in your
 app:
 
 ```sh
-npm install electron --save-dev
+npm install
+composer install
 ```
 
 For more installation options and troubleshooting tips, see
