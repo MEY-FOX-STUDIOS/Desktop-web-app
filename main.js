@@ -1,12 +1,25 @@
 const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');
+const { Notification } = require('electron')
 
 let mainWindow;
 
+app.setUserTasks([
+    {
+        program: process.execPath,
+        arguments: '--new-window',
+        iconPath: process.execPath,
+        iconIndex: 0,
+        title: 'New Window',
+        description: 'Create a new window'
+    }
+])
+
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        transparent: true,
+        width: 1200,
+        height: 900,
         icon: path.join(__dirname, 'assets/icon/icon_sq_rgb.ico'),
         webPreferences: {
             nodeIntegration: true
